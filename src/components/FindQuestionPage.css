@@ -1,0 +1,19 @@
+.find-question-page {
+  padding: 20px;
+}
+
+.filter-segment {
+  margin-bottom: 20px; 
+}
+
+.questions-card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px; 
+}
+
+.no-results-segment {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}

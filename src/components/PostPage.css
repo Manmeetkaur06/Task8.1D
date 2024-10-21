@@ -1,0 +1,20 @@
+.post-page-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Header styling */
+.post-page-header {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 12px;
+  background-color: #007bff; 
+  color: #ffffff; 
+  border-radius: 8px;
+}

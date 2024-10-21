@@ -1,0 +1,52 @@
+.homepage {
+  text-align: center;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero {
+  background-color: #007bff; 
+  padding: 100px 20px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+}
+
+.info-block {
+  max-width: 300px;
+}
+
+.info-block h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #007bff; 
+}
+
+.info-block p {
+  font-size: 16px;
+  color: #666;
+}
+
+.cta-button {
+  display: none;
+}

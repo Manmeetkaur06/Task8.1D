@@ -1,0 +1,29 @@
+.post-type-selector-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .post-type-label {
+    font-size: 18px; 
+    font-weight: bold;
+    text-align: left; 
+    margin-bottom: 10px;
+  }
+  
+  .radio-buttons-container {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .radio-option label {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+  
