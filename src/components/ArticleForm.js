@@ -40,40 +40,46 @@ const ArticleForm = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Basic validation for required fields
+    if (!title || !abstract || !articleText) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+  
     try {
-      const imageUrl = await handleImageUpload(); // Upload image and get URL
-
-      // Create a new article object
+      const imageUrl = await handleImageUpload() || null; // Handle image upload, allow null if no image
+  
       const newArticle = {
         title,
         abstract,
         articleText,
         tags,
-        imageUrl, // Include image URL in the article data
-        date: new Date().toISOString(), // Add the current date
+        imageUrl,  // Include image URL, even if null
+        date: new Date().toISOString(),
       };
-
-      // Add the article to the Firestore 'articles' collection
+  
+      // Add the article to Firestore
       await addDoc(collection(firestore, 'articles'), newArticle);
-      addArticle(newArticle); // Add article to the context
-
-      // Clear form fields after submission
+      addArticle(newArticle); // Update context
+  
+      // Clear form fields
       setTitle('');
+      setImage(null);
       setAbstract('');
       setArticleText('');
       setTags('');
-      setImage(null);
-
+      
+  
       alert('Article posted successfully!');
     } catch (error) {
-      console.error('Error posting article:', error);
-      alert('Error posting article.');
+      console.error('Error posting article:', error.message);  // Log more specific error message
+      alert(`Error posting article: ${error.message}`);  // Show a more detailed error alert
     }
   };
+  
 
   return (
     <Form onSubmit={handleSubmit} className="article-form">
