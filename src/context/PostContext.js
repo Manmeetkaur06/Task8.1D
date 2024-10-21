@@ -7,6 +7,7 @@ export const PostContext = createContext();
 
 export const PostProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]); // State to hold the list of questions
+  const [articles, setArticles] = useState([]); // State to hold the list of articles
 
   // Fetch all questions from Firestore
   const fetchQuestions = async () => {
@@ -39,10 +40,18 @@ export const PostProvider = ({ children }) => {
     }
   };
 
+  // Function to add article to Firestore and update local state
+  const addArticle = async (newArticle) => {
+    await addDoc(collection(firestore, 'articles'), newArticle); // Add to Firestore
+    setArticles((prevArticles) => [...prevArticles, newArticle]); // Update local state
+  };
+
   return (
     // Provide the questions state, addQuestion, and deleteQuestionFromFirestore functions to child components
-    <PostContext.Provider value={{ questions, setQuestions, addQuestion, deleteQuestionFromFirestore }}>
+    <PostContext.Provider value={{ questions, setQuestions, addQuestion, deleteQuestionFromFirestore, articles, addArticle }}>
       {children}
     </PostContext.Provider>
   );
 };
+
+  
